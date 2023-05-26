@@ -1,7 +1,7 @@
 const helmet = require('helmet');
 // ...
 app.use(helmet({
-  crossOriginOpenerPolicy: 'same-origin'
+  crossOriginOpenerPolicy: same-origin
 }));
 
 var Godot = (() => {
