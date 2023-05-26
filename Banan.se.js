@@ -5,7 +5,7 @@ app.use(helmet({
 }));
 
 app.use(helmet({
-  CrossOriginEmbedderPolicy: require-corp
+  crossOriginEmbedderPolicy: require-corp
 }));
 
 var Godot = (() => {
