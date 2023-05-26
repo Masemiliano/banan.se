@@ -1,4 +1,12 @@
+const helmet = require('helmet');
+// ...
+app.use(helmet({
+  crossOriginOpenerPolicy: same-origin
+}));
 
+app.use(helmet({
+  CrossOriginEmbedderPolicy: require-corp
+}));
 
 var Godot = (() => {
   var _scriptDir = typeof document !== 'undefined' && document.currentScript ? document.currentScript.src : undefined;
