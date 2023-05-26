@@ -1,12 +1,3 @@
-const helmet = require('helmet');
-// ...
-app.use(helmet({
-  crossOriginOpenerPolicy: same-origin
-}));
-
-app.use(helmet({
-  crossOriginEmbedderPolicy: require-corp
-}));
 
 var Godot = (() => {
   var _scriptDir = typeof document !== 'undefined' && document.currentScript ? document.currentScript.src : undefined;
@@ -829,7 +820,7 @@ function createExportWrapper(name, fixedasm) {
 
 var wasmBinaryFile;
 
-wasmBinaryFile = "godot.web.template_debug.wasm32.wasm";
+wasmBinaryFile = "godot.web.template_release.wasm32.wasm";
 
 if (!isDataURI(wasmBinaryFile)) {
  wasmBinaryFile = locateFile(wasmBinaryFile);
@@ -3867,7 +3858,7 @@ var PThread = {
   });
  },
  allocateUnusedWorker: function() {
-  var pthreadMainJs = locateFile("godot.web.template_debug.wasm32.worker.js");
+  var pthreadMainJs = locateFile("godot.web.template_release.wasm32.worker.js");
   PThread.unusedWorkers.push(new Worker(pthreadMainJs));
  },
  getNewWorker: function() {
